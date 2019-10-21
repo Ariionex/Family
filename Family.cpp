@@ -1,5 +1,4 @@
 #include "Family.hpp"
-#include <iostream>
 #include <random>
 
 Family::Family()
@@ -13,7 +12,7 @@ Family::Family()
 void Family::make_it_happen()
 {
     who_=members_[random_number(members_.size()-1)];
-    int options = 2;
+    int options = 3;
     random_action(who_,random_number(options));
 }
 int Family::random_number(int max_num)

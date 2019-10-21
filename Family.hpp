@@ -23,7 +23,7 @@ class Family
 {
 public:
     Family();
-    virtual ~Family()=default;
+    ~Family()=default;
     void make_it_happen();
     int random_number(int);
     void random_action(S_ptr, int);
