@@ -100,11 +100,55 @@ Time& Time::operator++(int n)
 
 Time& Time::operator--(int n)
 {
-    minutes_--;
-    if(minutes_ < 0)
+    if(hour_== 0 && minutes_== 0)
     {
-        hour_--;
-        minutes_=59;
+        std::cout<<"ERROR"<<std::endl;
+        std::cout<<"Current time = 0:00"<<std::endl;
+        std::exit(EXIT_FAILURE);
     }
-    return *this;
+    else
+    {
+        minutes_--;
+        if(minutes_ < 0)
+        {
+            hour_--;
+            minutes_=59;
+        }
+        return *this;
+    }
+}
+
+bool Time::operator==(const Time& other)
+{
+    return (hour_==other.hour_ && minutes_==other.minutes_)? 1:0;
+}
+
+bool Time::operator<(const Time& other)
+{
+    return (hour_<other.hour_ || (hour_==other.hour_ && minutes_<other.minutes_))? 1:0;
+}
+
+bool Time::operator<=(const Time& other)
+{
+    if(hour_<other.hour_)
+        return 1;
+    else if (hour_==other.hour_ && minutes_<=other.minutes_)
+        return 1;
+    else
+        return 0;
+}
+
+bool Time::operator>(const Time& other)
+{
+    return (hour_>other.hour_ || (hour_==other.hour_ && minutes_>other.minutes_))? 1:0;
+}
+
+bool Time::operator>=(const Time& other)
+{
+    if(hour_>other.hour_)
+        return 1;
+    else if (hour_==other.hour_ && minutes_>=other.minutes_)
+        return 1;
+    else
+        return 0;
 }
