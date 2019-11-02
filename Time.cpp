@@ -123,6 +123,11 @@ bool Time::operator==(const Time& other)
     return (hour_==other.hour_ && minutes_==other.minutes_)? 1:0;
 }
 
+bool Time::operator==(int n)// fix it
+{
+    return (hour_==0 && minutes_==0)? 1:0; 
+}
+
 bool Time::operator<(const Time& other)
 {
     return (hour_<other.hour_ || (hour_==other.hour_ && minutes_<other.minutes_))? 1:0;

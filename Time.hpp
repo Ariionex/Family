@@ -13,6 +13,7 @@ public:
     Time& operator++(int);
     Time& operator--(int);
     bool operator==(const Time&);
+    bool operator==(int);
     bool operator<(const Time&);
     bool operator<=(const Time&);
     bool operator>(const Time&);
