@@ -3,8 +3,14 @@
 #include "Time.hpp"
 
 int main()
-{   
-
+{
+    Family family;
+    while(true)
+    {
+        family.make_it_happen();
+        family.performing_tasks();
+        sleep(1);
+    }
 return 0;
 }
 
